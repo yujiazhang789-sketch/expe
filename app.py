@@ -145,23 +145,18 @@ if st.session_state.stage == "instruction":
     st.markdown("---")
     st.markdown("**评分等级说明（严格按表格）：**")
     st.markdown(
-        f"- **{PLEASURE_PROMPT}**  
-"
-        f"  `1=非常不愉快` · `5=中间` · `9=非常愉快`（1–9）  
-"
+        f"- **{PLEASURE_PROMPT}**  \n"
+        "  `1=非常不愉快` · `5=中间` · `9=非常愉快`（1-9）  \n"
         f"  *{PLEASURE_FOOTER_HINT}*"
     )
     st.markdown(
-        f"- **{AROUSAL_PROMPT}**  
-"
-        f"  `1=非常评价` · `9=非常激动`（1–9）  
-"
+        f"- **{AROUSAL_PROMPT}**  \n"
+        "  `1=非常评价` · `9=非常激动`（1-9）  \n"
         f"  *{AROUSAL_FOOTER_HINT}*"
     )
     st.markdown(
-        f"- **{CATEGORY_HEADER}**  
-"
-        f"  `1=中性` · `2=愤怒` · `3=厌恶` · `4=恐惧` · `5=悲伤`（1–5）"
+        f"- **{CATEGORY_HEADER}**  \n"
+        "  `1=中性` · `2=愤怒` · `3=厌恶` · `4=恐惧` · `5=悲伤`（1-5）"
     )
 
     if invalid_files:
@@ -242,7 +237,7 @@ elif st.session_state.stage == "rating_1_9":
     st.markdown("---")
     # 无预设评分：index=None，必须由被试主动选择
     st.markdown(f"**{PLEASURE_PROMPT}**")
-    st.caption("1=非常不愉快　　5=中间　　9=非常愉快")
+    st.caption("1=非常不愉快  5=中间  9=非常愉快")
     pleasure_val = st.radio(
         PLEASURE_FOOTER_HINT,
         options=list(range(1, 10)),
@@ -255,7 +250,7 @@ elif st.session_state.stage == "rating_1_9":
     st.markdown("---")
     # 无预设评分：index=None，必须由被试主动选择
     st.markdown(f"**{AROUSAL_PROMPT}**")
-    st.caption("1=非常评价　　9=非常激动")
+    st.caption("1=非常评价  9=非常激动")
     arousal_val = st.radio(
         AROUSAL_FOOTER_HINT,
         options=list(range(1, 10)),
@@ -312,7 +307,7 @@ elif st.session_state.stage == "rating_1_5":
     st.markdown("---")
     # 无预设评分：index=None，必须由被试主动选择
     st.markdown(f"**{CATEGORY_HEADER}**")
-    st.caption("1=中性　2=愤怒　3=厌恶　4=恐惧　5=悲伤")
+    st.caption("1=中性 2=愤怒 3=厌恶 4=恐惧 5=悲伤")
     category_val = st.radio(
         "请选择 1-5 对应选项",
         options=list(range(1, 6)),
